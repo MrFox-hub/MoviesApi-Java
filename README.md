@@ -74,7 +74,7 @@ Follow these steps to set up the project locally:
 1. **Clone the repository**:
     ```bash
     git clone https://github.com/MrFox-hub/MoviesApi-Java
-    cd kmdb
+    cd MoviesApi-Java
     ```
 
 2. **Configure the database**:
