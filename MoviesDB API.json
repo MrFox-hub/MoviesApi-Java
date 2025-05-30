@@ -1,0 +1,784 @@
+{
+	"info": {
+		"_postman_id": "44dda60b-082a-4583-b8dc-ce8bffe536cf",
+		"name": "MoviesDB API",
+		"description": "Skeleton Keys for Posting Movie, Genre, Actors:\n\nMovie:\n\n{  \n\"title\": \"Movie Title\",  \n\"duration\": 120,  \n\"releaseYear\": 2024,  \n\"description\": \"A short description of the movie\",  \n\"actorIds\": \\[1, 2\\], // IDs of associated actors  \n\"genreIds\": \\[1, 3\\] // IDs of associated genres  \n}\n\nGenre:\n\n{  \n\"name\": \"Genre Name\",  \n\"description\": \"Description of the genre\"  \n}\n\nActor:\n\n{  \n\"name\": \"Actor Name\",  \n\"birthDate\": \"YYYY-MM-DD\",  \n\"description\": \"Short description about the actor\"  \n}\n\n| Resource | Endpoint | Method | Sample Keys |\n| --- | --- | --- | --- |\n\n| **Genre** | `/api/genres` | POST | `name`, `description` |\n\n| **Actor** | `/api/actors` | POST | `name`, `birthDate`, `description` |\n\n| **Movie** | `/api/movies` | POST | `title`, `duration`, `releaseYear`, `description`, `actorIds`, `genreIds` |",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40309278"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "GET Requests",
+					"item": [
+						{
+							"name": "GetAllMovies",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/movies",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "actors",
+											"value": "1",
+											"description": "Insert Any ID",
+											"disabled": true
+										},
+										{
+											"key": "genres",
+											"value": "1",
+											"description": "Insert Any ID",
+											"disabled": true
+										},
+										{
+											"key": "year",
+											"value": "2022",
+											"description": "Insert Any Year",
+											"disabled": true
+										},
+										{
+											"key": "search",
+											"value": null,
+											"description": "Insert any value",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "5",
+											"description": "Insert any value",
+											"disabled": true
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"description": "Invert any value\n",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/movies?year=2022",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "actors",
+											"value": "1",
+											"description": "Insert Any ID",
+											"disabled": true
+										},
+										{
+											"key": "genres",
+											"value": "1",
+											"description": "Insert Any ID",
+											"disabled": true
+										},
+										{
+											"key": "year",
+											"value": "2022",
+											"description": "Insert Any Year"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetBySearch",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/movies?year=2022",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "actors",
+											"value": "1",
+											"description": "Insert Any ID",
+											"disabled": true
+										},
+										{
+											"key": "genres",
+											"value": "1",
+											"description": "Insert Any ID",
+											"disabled": true
+										},
+										{
+											"key": "year",
+											"value": "2022",
+											"description": "Insert Any Year"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetActorNames",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/movies?year=2022",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "actors",
+											"value": "1",
+											"description": "Insert Any ID",
+											"disabled": true
+										},
+										{
+											"key": "genres",
+											"value": "1",
+											"description": "Insert Any ID",
+											"disabled": true
+										},
+										{
+											"key": "year",
+											"value": "2022",
+											"description": "Insert Any Year"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetMovieActorsNames",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/movies/5/actors",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"movies",
+										"5",
+										"actors"
+									]
+								},
+								"description": "Post Movies/Genres/Actors Here\n\nMake sure its localhost8080 and endpoints match the right place...\n\nfor example genre in api/genres"
+							},
+							"response": []
+						},
+						{
+							"name": "GetMovieGenreNames",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/movies?year=2022",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"movies"
+									],
+									"query": [
+										{
+											"key": "actors",
+											"value": "1",
+											"description": "Insert Any ID",
+											"disabled": true
+										},
+										{
+											"key": "genres",
+											"value": "1",
+											"description": "Insert Any ID",
+											"disabled": true
+										},
+										{
+											"key": "year",
+											"value": "2022",
+											"description": "Insert Any Year"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetBySearch",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/movies/search?title",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"movies",
+										"search"
+									],
+									"query": [
+										{
+											"key": "title",
+											"value": null,
+											"description": "Insert Title\n"
+										},
+										{
+											"key": "Year",
+											"value": null,
+											"description": "Insert ReleaseYear",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Post M",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"title\": \"name\",\r\n            \"duration\": 123,\r\n            \"releaseYear\": 2024, \r\n            \"description\": \"A test movie for demonstration purposes.\", //add anything you want\r\n            \"actors\": [1, 2], //john and jane doe\r\n            \"genres\": [1,5] //whatever, i have 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch M",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"title\": \"High Stakes\",\r\n    \"duration\": 130,\r\n    \"releaseYear\": 2010,\r\n    \"description\": \"A gripping action movie featuring daring stunts and high-risk missions.\",\r\n    \"actors\": [\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"Jane Doe\",\r\n            \"birthDate\": \"2002-08-15\",\r\n            \"description\": null\r\n        },\r\n        {\r\n            \"id\": 12,\r\n            \"name\": \"Tommy Blake\",\r\n            \"birthDate\": \"1982-12-10\",\r\n            \"description\": \"Acclaimed actor recognized for his performances in historical and war dramas.\"\r\n        }\r\n    ],\r\n    \"genres\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"Action\",\r\n            \"description\": \"High-energy movies with exciting stunts and explosive sequences.\"\r\n        },\r\n        {\r\n            \"id\": 5,\r\n            \"name\": \"Mystery\",\r\n            \"description\": \"Suspenseful stories with puzzling plots and intriguing twists.\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/movies/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Actors",
+			"item": [
+				{
+					"name": "GetActors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById A",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/actors/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"actors",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post A",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"name\": \"Juhan Viik\",\r\n            \"birthDate\": \"1988-11-11\",\r\n            \"description\": \"Played Himself in his autobiography\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch A",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"name\": \"Emily Crawford\", \r\n            \"birthDate\": \"1995-07-04\",\r\n            \"description\": \"Multi-talented actress who shines in both horror and dramatic films.\"\r\n\r\n            //change any aspect\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/actors/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"actors",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Actor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//CREATE \"Juhan Viik beforehand for id 16 to work\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/actors/16?Force=True/False",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"actors",
+								"16"
+							],
+							"query": [
+								{
+									"key": "Force",
+									"value": "True/False",
+									"description": "Choose One"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Genres",
+			"item": [
+				{
+					"name": "GetGenres",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/genres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById G",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Post G",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"name\",\r\n    \"desc\":null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/genres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch G",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"EGGS DEE\",\r\n    \"description\":null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/genres/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"genres",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Genre",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/genre/6?Force=True",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"genre",
+								"6"
+							],
+							"query": [
+								{
+									"key": "Force",
+									"value": "True",
+									"description": "Create a 6th genre before-hand"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AllPossibleFailures",
+			"item": [
+				{
+					"name": "Duplicate Genre",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mystery\",\r\n    \"description\": \"Suspenseful stories with puzzling plots and intriguing twists.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/genres",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Wrong Bday",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alice Burgers\",\r\n    \"birthDate\": \"1987-13-31\",\r\n    \"description\": \"Critically acclaimed actress known for her versatile roles in indie dramas.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NoForceTrueDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/genres/1?force=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"genres",
+								"1"
+							],
+							"query": [
+								{
+									"key": "force",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Immutable Ids",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Missing Important Bits",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"title\": \"xd\",\r\n            \"duration\": 111,\r\n            \"releaseYear\": null\r\n            \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
